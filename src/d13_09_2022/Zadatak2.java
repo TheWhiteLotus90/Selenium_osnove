@@ -1,6 +1,6 @@
 package d13_09_2022;
 
-import java.awt.List;
+import java.util.List;
 import java.util.Scanner;
 
 import org.openqa.selenium.By;
