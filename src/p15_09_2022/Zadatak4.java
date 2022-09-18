@@ -21,9 +21,8 @@ public class Zadatak4 {
 
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // deo svakog zadatka isto
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // deo svakog zadatka isto
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // i to
-		
 		driver.manage().window().maximize(); 
 		
 		driver.get("https://demoqa.com/login");
@@ -32,15 +31,22 @@ public class Zadatak4 {
 		driver.findElement(By.id("password")).sendKeys("Itbootcamp2021!");
 		driver.findElement(By.id("login")).click();
 		
-		Thread.sleep(5000);
+//		Thread.sleep(5000);
+//		
+//		try {
+//			driver.findElement(By.tagName("a"));	
+//		}catch(NoSuchElementException error) {
+//			System.out.println("Greska");
+//		}
+//		
 		
-		try {
-			driver.findElement(By.tagName("a"));	
-		}catch(NoSuchElementException error) {
-			System.out.println("Greska");
+		boolean logoutExist = driver.findElements(By.id("submit")).size() > 0; //?
+		
+		if (logoutExist) {
+			System.out.println("Uspesno!");
+		} else {
+			System.out.println("Neuspesno!");
 		}
-		
-	
 		
 		Thread.sleep(5000); 
 		driver.quit();

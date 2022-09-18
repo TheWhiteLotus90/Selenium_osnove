@@ -16,17 +16,31 @@ public class Zadatak1 {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize(); 
 
-		driver.get("http://cms.demo.katalon.com/my-account/");
+		driver.navigate().to("https://cms.demo.katalon.com/my-account/");
 		
-		WebElement element = driver.findElement(By.name("rememberme"));
-		element.click();
-		element.isSelected(); 
+		driver.findElement(By.name("rememberme")).click();
 		
-		boolean isSelected = false;
-		
-		if(isSelected == true) {
-			isSelected = driver.findElement(By.tagName("input")).isSelected();
+		if (driver.findElement(By.name("rememberme")).isSelected()) {
+			System.out.println("CHecked!");
+		} else {
+			System.out.println("Unchecked");
 		}
+		
+//drugi nacin
+//		driver.get("http://cms.demo.katalon.com/my-account/");
+		
+//		WebElement element = driver.findElement(By.name("rememberme"));
+//		element.click();
+//		element.isSelected(); 
+				
+//		boolean isSelected = false;
+//		
+//		if(isSelected == true) {
+//			isSelected = driver.findElement(By.tagName("input")).isSelected();
+//			System.out.println("Checked");
+//		}else {
+//			System.out.println("Unchecked");
+//		}
 
 
 		Thread.sleep(5000); 

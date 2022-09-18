@@ -10,7 +10,7 @@ public class Zadatak2 {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 //		Napisati program koji ucitava stranicu 
-//		https://www.ebay.com/ i bira kategoriju “Crafts”
+//		https://www.ebay.com/ i bira kategoriju ï¿½Craftsï¿½
 
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -25,7 +25,6 @@ public class Zadatak2 {
 		
 		Thread.sleep(5000); 
 		driver.quit();
-
 
 	}
 
